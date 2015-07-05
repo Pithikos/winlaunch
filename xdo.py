@@ -71,7 +71,7 @@ def win_size(wid, x=None, y=None):
 		match = re.search(r'Geometry: (.*)', out)
 		if not match:
 			return None
-		return match.group(1).split('x')
+		return map(int, match.group(1).split('x'))
 	else:
 		xdo('windowsize %s %s %s' % (wid, x, y))
 
@@ -81,7 +81,7 @@ def win_pos(wid, x=None, y=None):
 		match = re.search(r'Position: (\d*,\d*)', out)
 		if not match:
 			return None
-		return match.group(1).split(',')
+		return map(int, match.group(1).split(','))
 	else:
 		xdo('windowmove %s %s %s' % (wid, x, y))
 
@@ -90,11 +90,11 @@ def win_screen(wid):
 	match = re.search(r'Position: \d*,\d* \(screen: (\d*)\)', out)
 	if not match:
 		return None
-	return match.group(1)
+	return int(match.group(1))
 
 def win_desktop(wid, desktop=None):
 	''' Gives the desktop number of the given window '''
 	if desktop is None:
-		return xdo('get_desktop_for_window %s' % wid).strip()
+		return int(xdo('get_desktop_for_window %s' % wid).strip())
 	else:
 		return xdo('set_desktop_for_window %s %desktop' % (wid, desktop))
