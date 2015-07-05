@@ -10,8 +10,8 @@ sudo apt-get install xdotool xprop xwininfo
 
 | Function                     | Description                                                                                                                                      |   |
 |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|---|
-| xrun(command)                | Runs a GUI application. The window id (wid) is returned and the process id (pid) that the window belongs to.                           |   |
+| xrun(command)                | Runs a GUI application in the background. The window id (wid) is returned and the process id (pid) that the window belongs to.                   |   |
 | win_size(wid, width, height) | Resizes the window with id `wid` to given width and height values. If no width and height are given, the current size of the window is returned. |   |
-| win_pos(wid, x, y)           |                                                                                                                                                  |   |
+| win_pos(wid, x, y)           | Moves the window with id `wid` to the given x and y coordinates. If no x and y are given. the current window position is returned.               |   |
 | win_desktop(wid, desktop)    | Sets the window with id `wid` to the given desktop. If desktop is not given the current desktop of the window is returned.                       |   |
-| win_screen(wid)      | Gives the current screen where the window with id `wid` is.                          |   |
+| win_screen(wid)              | Gives the current screen where the window with id `wid` is.                                                                                      |   |
