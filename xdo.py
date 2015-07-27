@@ -91,7 +91,7 @@ def win_size(wid, x=None, y=None):
 		match = re.search(r'Geometry: (.*)', out)
 		if not match:
 			return None
-		return map(int, match.group(1).split('x'))
+		return map(lambda x:int(x, 16), match.group(1).split('x'))
 	else:
 		xdo('windowsize %s %s %s' % (wid, x, y))
 
@@ -101,7 +101,7 @@ def win_pos(wid, x=None, y=None):
 		match = re.search(r'Position: (\d*,\d*)', out)
 		if not match:
 			return None
-		return map(int, match.group(1).split(','))
+		return map(lambda x:int(x, 16), match.group(1).split(','))
 	else:
 		xdo('windowmove %s %s %s' % (wid, x, y))
 
