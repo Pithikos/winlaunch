@@ -18,11 +18,11 @@ import sys
 
 # Make sure xdotools is installed
 try:
-	subprocess.Popen('xdotools')
+	subprocess.Popen('xdotool')
 except OSError as e:
 	if 'No such file' in e.args[1]:
-		print("ERROR: The program 'xdotools' is not installed. Use "\
-		      "'sudo apt-get install xdotools' to install it.")
+		print("ERROR: The program 'xdotool' is not installed. Use "\
+		      "'sudo apt-get install xdotool' to install it.")
 		sys.exit(1)
 
 
