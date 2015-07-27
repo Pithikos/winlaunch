@@ -1,10 +1,30 @@
 '''
-TODO:
-	* Allow to pass logname to xrun.
+Description:
+This module makes it super easy to launch graphical programs
+and set them in the correct desktops, at specific locations
+in the screen, etc. in a fully automated way.
+
+Todo:
+    * Allow to pass logname to xrun.
 '''
+
 import subprocess
 from time import sleep
 import re
+import sys
+
+
+
+
+# Make sure xdotools is installed
+try:
+	subprocess.Popen('xdotools')
+except OSError as e:
+	if 'No such file' in e.args[1]:
+		print("ERROR: The program 'xdotools' is not installed. Use "\
+		      "'sudo apt-get install xdotools' to install it.")
+		sys.exit(1)
+
 
 
 
