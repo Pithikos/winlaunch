@@ -60,7 +60,7 @@ def xrun(cmd):
 	if len(new_wids) < 1:
 		print('ERROR: xrun(): too few window ids found')
 		return None
-	wid = new_wids[0]
+	wid = int(new_wids[0], 16)
 	pid = win_pid(wid)
 	return wid, pid
 
@@ -102,7 +102,7 @@ def win_pos(wid, x=None, y=None):
 		match = re.search(r'Position: (\d*,\d*)', out)
 		if not match:
 			return None
-		return map(lambda x:int(x, 16), match.group(1).split(','))
+		return map(int, match.group(1).split(','))
 	else:
 		xdo('windowmove %s %s %s' % (wid, x, y))
 
