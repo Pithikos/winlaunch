@@ -92,7 +92,7 @@ def win_size(wid, x=None, y=None):
 		match = re.search(r'Geometry: (.*)', out)
 		if not match:
 			return None
-		return map(lambda x:int(x, 16), match.group(1).split('x'))
+		return map(int, match.group(1).split('x'))
 	else:
 		xdo('windowsize %s %s %s' % (wid, x, y))
 
