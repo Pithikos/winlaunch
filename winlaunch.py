@@ -99,7 +99,7 @@ def win_name(wid):
     return xdo('getwindowname %s' % wid).strip()
     
 def win_size(wid, x=None, y=None):
-	if not x or not y:
+	if x is None or y is None:
 		out = xdo('getwindowgeometry %s' % wid)
 		match = re.search(r'Geometry: (.*)', out)
 		if not match:
@@ -109,7 +109,7 @@ def win_size(wid, x=None, y=None):
 		xdo('windowsize %s %s %s' % (wid, x, y))
 
 def win_pos(wid, x=None, y=None):
-	if not x or not y:
+	if x is None or y is None:
 		out = xdo('getwindowgeometry %s' % wid)
 		match = re.search(r'Position: (\d*,\d*)', out)
 		if not match:
