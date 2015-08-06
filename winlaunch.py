@@ -160,9 +160,9 @@ class scriptify:
                 name = win_name(wid).split(' - ')[-1]
                 lines.append("# %s" % name)
                 lines.append("wid, pid = launch('%s')" % cmd)
-                lines.append("win_desktop(wid, %s)" % win_desktop(wid))
-                lines.append("win_pos(wid, %s, %s)" % tuple(win_pos(wid)))
                 lines.append("win_size(wid, %s, %s)" % tuple(win_size(wid)))
+                lines.append("win_pos(wid, %s, %s)" % tuple(win_pos(wid)))
+                lines.append("win_desktop(wid, %s)" % win_desktop(wid))
                 lines.append("")
             
         f.write(scriptify.script_header)
@@ -182,9 +182,9 @@ class scriptify:
                 name = win_name(wid).split(' - ')[-1]
                 lines.append("# %s" % name)
                 lines.append("wid, pid = launch('%s')" % pid_to_cmd(pid))
-                lines.append("win_desktop(wid, %s)" % win_desktop(wid))
-                lines.append("win_pos(wid, %s, %s)" % tuple(win_pos(wid)))
                 lines.append("win_size(wid, %s, %s)" % tuple(win_size(wid)))
+                lines.append("win_pos(wid, %s, %s)" % tuple(win_pos(wid)))
+                lines.append("win_desktop(wid, %s)" % win_desktop(wid))
                 lines.append("")
 
         f.write(scriptify.script_header)
