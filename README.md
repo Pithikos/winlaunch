@@ -9,12 +9,14 @@ to tweak in order to bring to your needs.
 
 ## Usage
 
-1. Open a Python prompt in the directory where WinLaunch resides
-2. Run `from winlaunch import scriptify; scriptify.open_windows()`
+1. Make sure you are in the same directory as the `winlaunch.py` file.
+2. Run `python -B -c 'import winlaunch; winlaunch.scriptify.open_windows()'`
 
-A file called launch_script.py should have been generated in the same directory.
-If you close all open windows and run that script with `./launch_script.py` the
-windows will be restored.
+A file called launch_script.py will get generated in the same directory. This
+script contains the instructions to launch all currently open windows to their
+current positions. You can test this by closing everything and running `./launch_script.py`.
+Notice that minor mistakes might be apparent in the script (ie. launch commands). These
+can easily be fixed by having a look in the script.
 
 ## Dependencies
 
