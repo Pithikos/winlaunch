@@ -12,7 +12,7 @@ import subprocess
 from time import sleep
 import re
 import sys
-
+import shlex
 
 
 
@@ -38,7 +38,7 @@ def pid_to_cmd(pid):
 
 def run_cmd(cmd):
 	''' Run a command '''
-	proc = subprocess.Popen(cmd.split(' '), stdout=subprocess.PIPE,
+	proc = subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE,
 	                                        stderr=subprocess.PIPE)
 	return proc
 	
