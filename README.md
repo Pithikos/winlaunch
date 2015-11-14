@@ -17,8 +17,8 @@ of all open windows and their location. Feel free to make some alterations to
 the script since since small errors might be there (terminals tend to all look
 the same for example).
 
-You can run the script with `./launch_script.py`. Have a look below for the
-full API.
+You can run the script with `./launch_script.py`. To get a better undestanding
+of the contents of the script, check the API documentation below.
 
 ## Dependencies
 
@@ -33,4 +33,3 @@ sudo apt-get install xdotool xprop xwininfo
 | win_pos(wid, x, y)           | Moves the window with id `wid` to the given x and y coordinates. If no x and y are given. the current window position is returned.               |   |
 | win_desktop(wid, desktop)    | Sets the window with id `wid` to the given desktop. If desktop is not given the current desktop of the window is returned.                       |   |
 | win_screen(wid)              | Gives the current screen where the window with id `wid` is.                                                                                      |   |
-| scriptify.open_windows(filename) | Will generate a script file that can be run to restore the current state of all open windows.
