@@ -1,22 +1,24 @@
 # WinLaunch
 
-A small tool that let's you save the position of open windows directly into
-a script file that you can run alone to restore those windows later. This is
-based on X tools like xdotool, xwininfo, xprop, etc.
+A small tool that captures open windows and their positions and generates
+a script that can be used to launch those windows again at those positions.
 
+Only tools used are xdotool, xwininfo, xprop which are quite common in Linux.
 The tool is very easy to use and although not 100% accurate it is very easy
 to tweak in order to bring to your needs.
 
 ## Usage
 
 1. Make sure you are in the same directory as the `winlaunch.py` file.
-2. Run `python -B -c 'import winlaunch; winlaunch.scriptify.open_windows()'`
+2. Run `python winlaunch.py generate-script`
 
-A file called launch_script.py will get generated in the same directory. This
-script contains the instructions to launch all currently open windows to their
-current positions. You can test this by closing everything and running `./launch_script.py`.
-Notice that minor mistakes might be apparent in the script (ie. launch commands). These
-can easily be fixed by having a look in the script.
+A Python script will be generated in the same directory containing a snapshot
+of all open windows and their location. Feel free to make some alterations to
+the script since since small errors might be there (terminals tend to all look
+the same for example).
+
+You can run the script with `./launch_script.py`. Have a look below for the
+full API.
 
 ## Dependencies
 
