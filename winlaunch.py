@@ -45,7 +45,7 @@ def run_cmd(cmd):
 
 def get_proc_output(proc):
 	out, err = proc.communicate()
-	return out.decode(), err.decode()
+	return out.decode("UTF-8"), err.decode("UTF-8")
 
 def get_cmd_output(cmd):
 	''' Run a command and get its output'''
