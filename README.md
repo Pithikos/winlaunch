@@ -22,7 +22,7 @@ of the contents of the script, check the API documentation below.
 
 ## Dependencies
 
-sudo apt-get install xdotool xprop xwininfo
+    sudo apt-get install xdotool xprop xwininfo
 
 ## API
 
